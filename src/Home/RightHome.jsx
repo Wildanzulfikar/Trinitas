@@ -1,11 +1,16 @@
-import image1 from "/public/suasana-gudang/(1).jpeg"
-import image2 from "/public/suasana-gudang/(2).jpeg"
+// RightHome.jsx
+import { motion } from "framer-motion"
 
-export default function RightHome() {
-    return (
-        <div>
-            <img src={image1} alt="image1" />
-            <img src={image2} alt="image2" />
-        </div>
-    )
+export default function RightHome({ image1 }) {
+  return (
+    <motion.div
+      className="w-full flex justify-center"
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <img className="w-full max-w-md lg:max-w-xl object-contain" src={image1} alt="Gudang" />
+    </motion.div>
+  )
 }

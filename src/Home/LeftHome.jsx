@@ -1,31 +1,33 @@
-export default function LeftHome() {
-    return (
-        <div>
-            <Header />
-            <SubHeader />
-            <CallToAction />
-        </div>
-    )
-}
+// LeftHome.jsx
+import { motion } from "framer-motion"
 
-
-function Header() {
-    return (
-        <h1>Solusi Sewa Gudang yang Aman & Terpercaya</h1>
-    )
-}
-
-function SubHeader() {
-    return (
-        <p>Kami menyediakan gudang dengan lokasi strategis, harga kompetitif, dan keamanan 24 jam.</p>
-    )
+export default function LeftHome({ subHeader }) {
+  return (
+    <motion.div
+      className="flex flex-col gap-6 mt-8 text-center lg:text-left"
+      initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-snug lg:leading-tight">
+        Solusi <span className="text-[#ED3500]">Sewa Gudang</span> yang Aman & Terpercaya
+      </h1>
+      <p className="text-sm sm:text-base">{subHeader}</p>
+      <CallToAction />
+    </motion.div>
+  )
 }
 
 function CallToAction() {
-    return (
-        <div>
-            <a href="">Hubungi Kami</a>
-            <a href="">Pelajari Selengkapnya</a>
-        </div>
-    )
+  return (
+    <div className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start text-[14px] gap-4 sm:gap-8">
+      <a className="border border-[#093FB4] rounded-[4px] px-4 py-2 hover:bg-[#093FB4] hover:text-white transition" href="">
+        Hubungi Kami
+      </a>
+      <a className="bg-[#093FB4] text-white rounded-[4px] px-4 py-2 hover:bg-blue-800 transition" href="">
+        Pelajari Selengkapnya
+      </a>
+    </div>
+  )
 }

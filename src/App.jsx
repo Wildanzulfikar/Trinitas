@@ -1,9 +1,33 @@
 import Navbar from "./Navbar/Navbar"
+import AppHome from "./Home/AppHome"
+import HamburgerMenu from "./Component/HamburgerMenu"
+import AppPrinsip from "./Prinsip/AppPrinsip"
+import AppAbout from "./About/AppAbout"
+import VisiMisi from "./Visi&Misi/VisiMisi"
+import LogoSlider from "./Client/LogoSlider"
+import AppFasilitas from "./Fasilitas/AppFasilitas"
+import DaftarGudang from "./Gudang/DaftarGudang"
+import WarehouseSlider from "./Slider/WarehouseSlider"
+import FAQ from "./Faq/Faq"
+import ContactSection from "./Contact/ContactSection"
+import Footer from "./Footer/Footer"
 
 export default function App() {
     return(
         <div>
             {/* <Navbar /> */}
+            <HamburgerMenu />
+            <AppHome />
+            <AppPrinsip />
+            <AppAbout />
+            <VisiMisi />
+            <LogoSlider />
+            <AppFasilitas />
+            <DaftarGudang />
+            <WarehouseSlider />
+            <FAQ/>
+            <ContactSection />
+            <Footer />
         </div>
     )
 }
