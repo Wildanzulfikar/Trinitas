@@ -23,10 +23,23 @@ export default function WarehouseGallery() {
     <section className="relative bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
       {/* Title */}
       <div className="max-w-4xl mx-auto mb-12">
-        <h2 className="text-4xl font-bold">
-          <span className="underline font-semibold">Suasana</span>{' '}
-          <span className="text-red-500 font-bold">Gudang</span>
-        </h2>
+        <div className="flex gap-40 top-8 right-8">
+          <h2 className="text-4xl font-bold">
+            <span className="font-semibold">Suasana</span>{' '}
+            <span className="text-red-500 font-bold">Gudang</span>
+          </h2>
+          <button className="flex items-center border border-blue-600 text-blue-600 px-5 py-2 rounded-full hover:bg-blue-100 transition">
+            Hubungi Kami
+            <svg
+              className="ml-2 w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
         <p className="mt-4 text-gray-700 text-lg max-w-2xl">
           Gudang kami memiliki area luas, akses jalan yang lebar, serta fasilitas pendukung untuk kelancaran distribusi.
         </p>
@@ -77,19 +90,7 @@ export default function WarehouseGallery() {
       </div>
 
       {/* Tombol Hubungi Kami di pojok kanan atas */}
-      <div className="absolute top-8 right-8">
-        <button className="flex items-center border border-blue-600 text-blue-600 px-5 py-2 rounded-full hover:bg-blue-100 transition">
-          Hubungi Kami
-          <svg
-            className="ml-2 w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
+      
     </section>
   );
 }

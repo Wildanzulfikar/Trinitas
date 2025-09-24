@@ -11,6 +11,7 @@ import WarehouseSlider from "./Slider/WarehouseSlider"
 import FAQ from "./Faq/Faq"
 import ContactSection from "./Contact/ContactSection"
 import Footer from "./Footer/Footer"
+import ListContact from "./Contact/ListContact"
 
 export default function App() {
     return(
@@ -26,6 +27,7 @@ export default function App() {
             <DaftarGudang />
             <WarehouseSlider />
             <FAQ/>
+            <ListContact />
             <ContactSection />
             <Footer />
         </div>

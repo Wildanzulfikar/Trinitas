@@ -73,7 +73,6 @@ export default function DaftarGudang() {
     }
   };
 
-  // Auto-slide tiap 4 detik
   useEffect(() => {
     const interval = setInterval(() => {
       scroll("right");

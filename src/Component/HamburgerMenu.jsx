@@ -1,53 +1,83 @@
-import { useState } from "react";
-import  Logo  from "/public/logo-trinitas.png"
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function HamburgerMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const navItems = [
+    "Home",
+    "Tentang Kami",
+    "Kontak",
+    "Fasilitas",
+    "Info Gudang",
+    "Galeri",
+  ];
 
   return (
-    <nav className="absolute bg-[#2859C5] text-white px-10 py-4 w-full">
-      <div className="flex items-center justify-between">
-        <div className="text-xl font-bold">
-            <img className="w-10" src={Logo} alt="Logo-trinitas" />
+    <div className="flex justify-center">
+    <nav className="bg-white z-50 fixed w-full shadow-md py-4 px-6 rounded-full mx-auto max-w-6xl mt-4">
+      {/* Desktop */}
+      <div className="hidden px-11 md:flex justify-between items-center">
+        {/* Left Nav */}
+        <div className="flex space-x-6">
+          {navItems.slice(0, 3).map((item, i) => (
+            <NavItem key={i} item={item} active={item === "Tentang Kami"} />
+          ))}
         </div>
 
-        <div className="md:hidden" onClick={toggleMenu}>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            />
-          </svg>
+        {/* Logo */}
+        <div className="flex flex-col items-center">
+          <img
+            src="/logo-trinitas.png"
+            alt="Logo"
+            className="w-10 h-10 object-contain"
+          />
+          <span className="text-xs font-semibold mt-1 text-gray-700">
+            PT. Trinitas Prima Sejahtera
+          </span>
         </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6">
-          <li><a href="#home" className="hover:text-red-500">Home</a></li>
-          <li><a href="#about" className="hover:text-red-500">About</a></li>
-          <li><a href="#services" className="hover:text-red-500">Services</a></li>
-          <li><a href="#contact" className="hover:text-red-500">Contact</a></li>
-        </ul>
+        {/* Right Nav */}
+        <div className="flex space-x-6">
+          {navItems.slice(3).map((item, i) => (
+            <NavItem key={i} item={item} />
+          ))}
+        </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <ul className="md:hidden mt-4 space-y-2">
-          <li><a href="#home" className="block hover:text-red-500">Home</a></li>
-          <li><a href="#about" className="block hover:text-red-500">About</a></li>
-          <li><a href="#services" className="block hover:text-red-500">Services</a></li>
-          <li><a href="#contact" className="block hover:text-red-500">Contact</a></li>
-        </ul>
+      {/* Mobile */}
+      <div className="md:hidden flex justify-between items-center">
+        <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+        <button onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="md:hidden mt-4 space-y-4 text-center">
+          {navItems.map((item, i) => (
+            <NavItem key={i} item={item} active={item === "Tentang Kami"} />
+          ))}
+        </div>
       )}
     </nav>
+    </div>
+  );
+}
+
+function NavItem({ item, active }) {
+  return (
+    <div className="relative group cursor-pointer">
+      <span
+        className={`text-sm font-semibold ${
+          active ? "text-orange-600" : "text-black"
+        }`}
+      >
+        {item}
+      </span>
+      {active && (
+        <div className="h-[2px] w-5 mx-auto bg-orange-600 mt-1 rounded-full" />
+      )}
+    </div>
   );
 }
