@@ -15,7 +15,7 @@ export default function HamburgerMenu() {
 
   return (
     <div className="flex justify-center">
-    <nav className="bg-white z-50 fixed w-full shadow-md py-4 px-6 rounded-full mx-auto max-w-6xl mt-4">
+    <nav className="bg-white z-50 fixed w-[74em] mx- shadow-md py-4 px-6 rounded-full mt-4">
       {/* Desktop */}
       <div className="hidden px-11 md:flex justify-between items-center">
         {/* Left Nav */}
@@ -46,8 +46,8 @@ export default function HamburgerMenu() {
       </div>
 
       {/* Mobile */}
-      <div className="md:hidden flex justify-between items-center">
-        <img src="/logo.png" alt="Logo" className="w-8 h-8" />
+      <div className="md:hidden  flex justify-between items-center">
+        <img src="/logo-trinitas.png" alt="Logo" className="w-8 h-8" />
         <button onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>

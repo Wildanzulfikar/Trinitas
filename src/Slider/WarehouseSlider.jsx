@@ -53,13 +53,13 @@ export default function WarehouseGallery() {
             <div
               key={index}
               className={`relative overflow-hidden rounded-md transition-all duration-300 ease-in-out shadow
-                ${isActive ? 'w-[400px] h-56' : 'w-[200px] h-40 opacity-70'}
+                ${isActive ? 'h-56' : 'h-40 opacity-70'}
               `}
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover"
+                className="h-full object-cover"
               />
               {isActive && (
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded">
