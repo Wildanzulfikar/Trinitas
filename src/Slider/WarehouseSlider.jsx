@@ -25,22 +25,6 @@ export default function WarehouseGallery() {
   const nextSlide = () =>
     setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
 
-  // start auto-slide
-  const startAutoSlide = () => {
-    if (intervalRef.current) return;
-    intervalRef.current = setInterval(() => {
-      setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 3000);
-  };
-
-  // stop auto-slide
-  const stopAutoSlide = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  };
-
   return (
     <section id="galeri" className="relative bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
       {/* Title */}
@@ -76,8 +60,6 @@ export default function WarehouseGallery() {
       {/* Image slider */}
       <div
         ref={containerRef}
-        onMouseEnter={startAutoSlide}
-        onMouseLeave={stopAutoSlide}
         className="flex max-w-6xl mx-auto items-center space-x-6 mb-8 overflow-hidden scroll-smooth px-4 md:px-0"
       >
         {images.map((img, index) => {
