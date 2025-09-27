@@ -1,9 +1,9 @@
-import client from "/public/client.png"
+import client from "/client.png"
 
 export default function ContentAbout() {
     return (
-        <div className="flex flex-col gap-6 max-w-6xl mx-auto mt-10">
-            <h1 className="font-bold text-2xl">Tentang <span className="text-[#ED3500]">Kami</span></h1>
+        <div className="flex flex-col gap-6 mx-auto mt-10">
+            <h1 className="font-extrabold text-3xl">Tentang <span className="text-[#ED3500]">Kami</span></h1>
             <Text text="Kami adalah perusahaan penyedia jasa sewa gudang profesional yang berkomitmen membantu bisnis dalam mengelola penyimpanan barang dengan lebih efisien, aman, dan terjangkau. Dengan pengalaman bertahun-tahun di bidang logistik, kami memahami betul pentingnya ruang penyimpanan yang strategis dan terorganisir."/>
             <Client/>
         </div>

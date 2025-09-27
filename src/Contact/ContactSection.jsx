@@ -23,13 +23,14 @@ export default function ContactSection() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row bg-white rounded shadow-md overflow-hidden max-w-4xl mx-auto mt-10">
+    <div className="px-5 md:px-5">
+      <div className="flex flex-col md:flex-row bg-white rounded shadow-md overflow-hidden max-w-6xl md:mx-auto mt-10">
       {/* Gambar */}
       <div className="md:w-1/2">
         <img
           src="daftar-gudang/A1.jpeg"
           alt="Warehouse"
-          className="h-full w-full object-cover"
+          className="h-[480px] w-full object-cover"
         />
       </div>
 
@@ -105,6 +106,7 @@ export default function ContactSection() {
             Submit
           </button>
         </form>
+      </div>
       </div>
     </div>
   );

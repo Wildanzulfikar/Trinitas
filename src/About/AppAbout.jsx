@@ -3,7 +3,7 @@ import ContentAbout from "./ContentAbout"
 
 export default function AppAbout() {
     return (
-        <div className=" min-w-screen px-10 mb-32">
+        <div id="tentangkami" className="max-w-6xl mx-auto mb-32 px-5 md:px-5">
             <CarouselDefault />
             <ContentAbout />
         </div>

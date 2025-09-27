@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const images = [
-  "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=2560&q=80",
-  "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=2940&q=80",
-  "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?auto=format&fit=crop&w=2762&q=80"
+  "suasana-gudang/(1).jpeg",
+  "suasana-gudang/(2).jpeg",
+  "suasana-gudang/(3).jpeg"
 ];
 
 export default function CarouselDefault() {
@@ -17,7 +17,7 @@ export default function CarouselDefault() {
   }, []);
 
   return (
-    <div className="w-full max-w-4xl mx-auto overflow-hidden rounded-md relative">
+    <div className="w-full overflow-hidden rounded-md relative">
       <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px]">
         {images.map((img, index) => (
           <img

@@ -28,7 +28,7 @@ export default function VisiMisiPage() {
         Visi <span className="text-red-500">& Misi</span>
       </motion.h2>
 
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl items-start">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-32 max-w-6xl items-start">
         {/* Vertical dividing line */}
         <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-red-300 via-gray-300 to-blue-300 opacity-50"></div>
 
