@@ -102,7 +102,7 @@ export default function WarehouseGallery() {
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover"
+                className="h-full object-cover"
               />
               {isActive && img.vibe && (
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded">
