@@ -16,13 +16,14 @@ import ListContact from "./Contact/ListContact"
 export default function App() {
 
     useEffect(() => {
-    
-    if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
-    }
+        if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual"
+        }
 
-    window.scrollTo(0, 0);
-    }, []);
+        setTimeout(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" })
+        }, 50) // delay dikit biar DOM siap
+    }, [])
 
     return(
         <div>
