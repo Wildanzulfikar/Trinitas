@@ -22,7 +22,7 @@ export default function App() {
 
         setTimeout(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "instant" })
-        }, 50) // delay dikit biar DOM siap
+        }, 50)
     }, [])
 
     return(

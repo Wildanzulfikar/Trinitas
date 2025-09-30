@@ -13,7 +13,7 @@ export default function HomeList({ subHeader, image1 }) {
       </div>
 
       <a
-        href="https://wa.me/1234567890"
+        href="https://wa.me/6281318130037"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-5 right-5 w-14 h-14 z-50 transform transition-all duration-300 hover:scale-110 hover:shadow-lg hover:animate-bounce"

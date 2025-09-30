@@ -18,24 +18,51 @@ const images = [
 export default function WarehouseGallery() {
   const [current, setCurrent] = useState(0);
   const containerRef = useRef(null);
-  const intervalRef = useRef(null);
 
   const prevSlide = () =>
-    setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrent(prev => (prev === 0 ? images.length - 1 : prev - 1));
   const nextSlide = () =>
-    setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1));
+
+  // Auto scroll gambar aktif ke tengah di mobile
+  useEffect(() => {
+    if (window.innerWidth < 768 && containerRef.current) {
+      const container = containerRef.current;
+      const activeEl = container.children[current];
+      if (activeEl) {
+        const containerWidth = container.clientWidth;
+        const elementWidth = activeEl.clientWidth;
+        const elementLeft = activeEl.offsetLeft;
+
+        const scrollPos = elementLeft - (containerWidth / 2 - elementWidth / 2);
+        container.scrollTo({
+          left: scrollPos,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [current]);
+
+  // Auto-slide setiap 4 detik
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent(prev => (prev === images.length - 1 ? 0 : prev + 1));
+    }, 4000); // 4 detik
+
+    return () => clearInterval(interval); // bersihin interval saat komponen unmount
+  }, []);
 
   return (
-    <section id="galeri" className="relative bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
+    <section className="relative bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
       {/* Title */}
       <div className="max-w-6xl mx-auto mb-12">
         <div className="md:flex justify-between items-center">
           <h2 className="text-3xl font-extrabold mb-4">
-            <span className="">Suasana</span>{" "}
+            <span>Suasana</span>{" "}
             <span className="text-red-500">Gudang</span>
           </h2>
           <button className="flex items-center border border-blue-600 text-blue-600 px-5 py-2 rounded-full hover:bg-blue-100 transition">
-            Hubungi Kami
+            <a href="https://wa.me/6281318130037" target="_blank">Hubungi Kami</a>
             <svg
               className="ml-2 w-5 h-5"
               fill="none"
@@ -60,7 +87,7 @@ export default function WarehouseGallery() {
       {/* Image slider */}
       <div
         ref={containerRef}
-        className="flex max-w-6xl mx-auto items-center space-x-6 mb-8 overflow-hidden scroll-smooth px-4 md:px-0"
+        className="flex max-w-6xl mx-auto items-center space-x-4 md:space-x-6 mb-8 overflow-x-auto scroll-smooth px-2 md:px-0 no-scrollbar snap-x snap-mandatory"
       >
         {images.map((img, index) => {
           const isActive = index === current;
@@ -68,27 +95,22 @@ export default function WarehouseGallery() {
             <div
               key={index}
               onClick={() => setCurrent(index)}
-              ref={(el) => {
-                if (el && isActive) {
-                  el.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest",
-                    inline: "center",
-                  });
-                }
-              }}
               className={`relative flex-shrink-0 overflow-hidden rounded-md shadow-lg cursor-pointer transform transition-all duration-500 ease-in-out
-                ${isActive ? "w-[480px] h-64 scale-105 z-10" : "w-[220px] h-40 opacity-70 scale-100 z-0"}
-              `}
+                ${isActive
+                  ? "w-[320px] h-48 md:w-[480px] md:h-64 scale-105 z-10 snap-center"
+                  : "w-[140px] h-28 md:w-[220px] md:h-40 opacity-70 scale-100 z-0"
+                }`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="h-full object-cover"
+                className="h-full w-full object-cover"
               />
               {isActive && img.vibe && (
                 <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-50 px-4 py-1 rounded">
-                  <p className="text-white font-semibold text-sm">{img.vibe}</p>
+                  <p className="text-white font-semibold text-xs md:text-sm">
+                    {img.vibe}
+                  </p>
                 </div>
               )}
             </div>
@@ -96,7 +118,7 @@ export default function WarehouseGallery() {
         })}
       </div>
 
-      {/* Panah navigasi */}
+      {/* Panah navigasi desktop */}
       <div className="flex justify-center space-x-6">
         <button
           onClick={prevSlide}

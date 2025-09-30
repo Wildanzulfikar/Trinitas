@@ -22,10 +22,10 @@ export default function LeftHome({ subHeader }) {
 function CallToAction() {
   return (
     <div className="flex sm:flex-row items-center sm:items-start sm:justify-start text-[14px] gap-4 sm:gap-8">
-      <a className="border border-[#093FB4] rounded-[4px] px-4 py-2 hover:bg-[#093FB4] hover:text-white transition" href="">
+      <a href="https://wa.me/6281318130037" className="border border-[#093FB4] rounded-[4px] px-4 py-2 hover:bg-[#093FB4] hover:text-white transition">
         Hubungi Kami
       </a>
-      <a className="bg-[#093FB4] text-white rounded-[4px] px-4 py-2 hover:bg-blue-800 transition" href="">
+      <a className="bg-[#093FB4] text-white rounded-[4px] px-4 py-2 hover:bg-blue-800 transition" href="#tentangkami">
         Pelajari Selengkapnya
       </a>
     </div>

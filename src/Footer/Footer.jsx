@@ -26,7 +26,6 @@ export default function Footer() {
           </p>
           <div className="flex gap-6 mb-4">
             <FaTiktok size={20} className="cursor-pointer"/>
-            <FaTwitter size={20} className="cursor-pointer"/>
             <FaInstagram size={20} className="cursor-pointer"/>
             <FaFacebookF size={20} className="cursor-pointer"/>
           </div>
@@ -43,11 +42,11 @@ export default function Footer() {
         <div className="mb-20 md:mb-0">
           <h3 className="font-bold mb-8">Navigasi</h3>
           <ul className="space-y-4 text-gray-600">
-            <li className="hover:text-gray-800 cursor-pointer">Home</li>
-            <li className="hover:text-gray-800 cursor-pointer">Tentang kami</li>
-            <li className="hover:text-gray-800 cursor-pointer">Fasilitas</li>
-            <li className="hover:text-gray-800 cursor-pointer">Info gudang</li>
-            <li className="hover:text-gray-800 cursor-pointer">Galeri</li>
+            <li className="hover:text-gray-800 cursor-pointer"><a href="#home">Home</a></li>
+            <li className="hover:text-gray-800 cursor-pointer"><a href="#tentangkami">Tentang kami</a></li>
+            <li className="hover:text-gray-800 cursor-pointer"><a href="#fasilitas">Fasilitas</a></li>
+            <li className="hover:text-gray-800 cursor-pointer"><a href="#infogudang">Info gudang</a></li>
+            <li className="hover:text-gray-800 cursor-pointer"><a href="#galeri">Galeri</a></li>
           </ul>
         </div>
 

@@ -22,7 +22,7 @@ export default function DaftarGudang() {
       img: "daftar-gudang/B2.jpeg",
 
       fasilitas: { Kantor: false, Toilet: false, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di A1, A2",
+      catatan: " - ",
       highlight: true,
     },
     {
@@ -32,7 +32,7 @@ export default function DaftarGudang() {
       img: "daftar-gudang/B3.jpeg",
 
       fasilitas: { Kantor: false, Toilet: false, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di L1",
+      catatan: " - ",
       highlight: false,
     },
     {
@@ -41,7 +41,7 @@ export default function DaftarGudang() {
       size: "2400 m²",
       img: "daftar-gudang/B4.jpeg",
       fasilitas: { Kantor: false, Toilet: false, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di B1",
+      catatan: " - ",
       highlight: false,
     },
     {
@@ -50,7 +50,7 @@ export default function DaftarGudang() {
       size: "2000 m²",
       img: "daftar-gudang/B5.jpeg",
       fasilitas: { Kantor: true, Toilet: true, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di B1",
+      catatan: " - ",
       highlight: false,
     },
     {
@@ -59,7 +59,7 @@ export default function DaftarGudang() {
       size: "1200 m²",
       img: "daftar-gudang/B6.jpeg",
       fasilitas: { Kantor: true, Toilet: true, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di B1",
+      catatan: " - ",
       highlight: false,
     },
     {
@@ -68,7 +68,7 @@ export default function DaftarGudang() {
       size: "1600 m²",
       img: "daftar-gudang/B7.jpeg",
       fasilitas: { Kantor: false, Toilet: true, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di B1",
+      catatan: " - ",
       highlight: false,
     },
     {
@@ -77,7 +77,7 @@ export default function DaftarGudang() {
       size: "2508 m²",
       img: "daftar-gudang/L1.jpeg",
       fasilitas: { Kantor: true, Toilet: true, Wastafel: true },
-      catatan: "Fasilitas ini terdapat di B1",
+      catatan: " - ",
       highlight: true,
     },
     {
@@ -86,13 +86,14 @@ export default function DaftarGudang() {
       size: "840 m²",
       img: "daftar-gudang/L2.jpeg",
       fasilitas: { Kantor: false, Toilet: false, Wastafel: false },
-      catatan: "Fasilitas ini terdapat di B1",
+      catatan: " - ",
       highlight: false,
     },
   ];
 
   const scroll = (direction) => {
-  if (scrollRef.current) {
+    if (!scrollRef.current) return;
+
     const cards = scrollRef.current.children;
     let newIndex = activeIndex;
 
@@ -104,7 +105,6 @@ export default function DaftarGudang() {
 
     setActiveIndex(newIndex);
 
-    // Cari posisi card sesuai index
     const targetCard = cards[newIndex];
     if (targetCard) {
       scrollRef.current.scrollTo({
@@ -112,10 +112,9 @@ export default function DaftarGudang() {
         behavior: "smooth",
       });
     }
-  }
-};
+  };
 
-
+  // Auto-slide setiap 4 detik
   useEffect(() => {
     const interval = setInterval(() => {
       scroll("right");
@@ -139,7 +138,7 @@ export default function DaftarGudang() {
         </div>
 
         {/* Tombol navigasi */}
-          <button
+        <button
           onClick={() => scroll("left")}
           className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-2 z-10 hover:bg-gray-100"
         >
@@ -155,7 +154,7 @@ export default function DaftarGudang() {
         {/* Scrollable Row */}
         <div
           ref={scrollRef}
-          className="flex space-x-4 overflow-hidden scroll-smooth"
+          className="flex space-x-4 overflow-x-auto scroll-smooth scrollbar-hide"
         >
           {data.map((item) => (
             <div
@@ -167,7 +166,7 @@ export default function DaftarGudang() {
               <img
                 src={item.img}
                 alt={item.name}
-                className={`w-[460px] h-64 object-cover ${
+                className={`w-[368px] h-64 object-cover ${
                   item.highlight ? "border-b-4 border-blue-400" : ""
                 }`}
               />
@@ -180,10 +179,7 @@ export default function DaftarGudang() {
                 </div>
                 <ul className="space-y-3 mb-3">
                   {Object.entries(item.fasilitas).map(([fasilitas, tersedia]) => (
-                    <li
-                      key={fasilitas}
-                      className="flex items-center gap-2 text-gray-700"
-                    >
+                    <li key={fasilitas} className="flex items-center gap-2 text-gray-700">
                       {tersedia ? (
                         <CheckCircle className="text-green-500 w-5 h-5" />
                       ) : (
