@@ -10,7 +10,7 @@ export default function RightHome({ image1 }) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <img className="w-full max-w-md lg:max-w-xl object-contain" src={image1} alt="Gudang" />
+      <img className="w-full max-w-md lg:max-w-xl object-contain" src={image1} alt="Sewa Gudang Murah dan Strategis di Jakarta" />
     </motion.div>
   )
 }

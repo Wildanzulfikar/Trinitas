@@ -19,14 +19,14 @@ export default function VisiMisiPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-100 to-white flex flex-col items-center p-8">
       {/* Title */}
-      <motion.h2
+      <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl font-extrabold mb-12 border border-gray-300 px-8 py-3 rounded-full shadow-lg bg-white"
       >
         Visi <span className="text-red-500">& Misi</span>
-      </motion.h2>
+      </motion.h1>
 
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-32 max-w-6xl items-start">
         {/* Vertical dividing line */}

@@ -125,9 +125,9 @@ export default function DaftarGudang() {
   return (
     <div className="px-5 md:px-5">
       <div id="gudang" className="max-w-6xl md:mx-auto py-10 relative">
-        <h2 className="text-3xl font-extrabold mb-2">
+        <h1 className="text-3xl font-extrabold mb-2">
           Daftar <span className="text-red-500">Gudang</span>
-        </h2>
+        </h1>
         <p className="text-gray-600 mb-4">
           Pilih gudang sesuai kebutuhan Anda, dilengkapi dengan detail luas dan fasilitas.
         </p>

@@ -33,7 +33,7 @@ export default function ContactSection() {
           alert("Email berhasil dikirim!");
           setFormData({
             firstName: "",
-            lastName: "",
+            lastName: "", 
             email: "",
             phone: "",
             message: "",
