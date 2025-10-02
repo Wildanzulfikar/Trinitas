@@ -3,9 +3,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const images = [
-  { src: "suasana-gudang/(1).jpeg", vibe: "Suasana gudang", alt: "Gudang 1" },
-  { src: "suasana-gudang/(2).jpeg", vibe: "Jalan utama gudang", alt: "Gudang 2" },
-  { src: "suasana-gudang/(3).jpeg", vibe: "Parkiran", alt: "Gudang 3" },
+  { src: "suasana-gudang/(1).jpeg", alt: "Gudang 1" },
+  { src: "suasana-gudang/(2).jpeg", alt: "Gudang 2" },
+  { src: "suasana-gudang/(3).jpeg", alt: "Gudang 3" },
   { src: "suasana-gudang/(4).jpeg", alt: "Gudang 4" },
   { src: "suasana-gudang/(5).jpeg", alt: "Gudang 5" },
   { src: "suasana-gudang/(6).jpeg", alt: "Gudang 6" },
@@ -53,7 +53,7 @@ export default function WarehouseGallery() {
   }, []);
 
   return (
-    <section className="relative bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
+    <section className="relative h-[640px] bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
       {/* Title */}
       <div className="max-w-6xl mx-auto mb-12">
         <div className="md:flex justify-between items-center">

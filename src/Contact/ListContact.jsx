@@ -26,7 +26,7 @@ const ListContact = () => {
         {/* Email */}
         <div className="flex flex-col items-center text-gray-700">
           <FaEnvelope className="text-2xl mb-2" />
-          <p>trinintas@gmail.com</p>
+          <p>tps.trinitasprimasejahtera@gmail.com</p>
         </div>
 
         {/* Address */}

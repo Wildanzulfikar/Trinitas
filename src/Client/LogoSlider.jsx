@@ -7,6 +7,9 @@ const logos = [
   "LogoSlider/logo3.png",
   "LogoSlider/logo4.png",
   "LogoSlider/logo5.png",
+  "LogoSlider/logo6.png",
+  "LogoSlider/logo7.png",
+  "LogoSlider/logo8.png",
 ];
 
 export default function LogoSlider() {

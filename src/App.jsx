@@ -12,6 +12,8 @@ import FAQ from "./Faq/Faq"
 import ContactSection from "./Contact/ContactSection"
 import Footer from "./Footer/Footer"
 import ListContact from "./Contact/ListContact"
+import Siteplan from "./Siteplan/Siteplan"
+import Location from "./Location/Location"
 
 export default function App() {
 
@@ -36,6 +38,8 @@ export default function App() {
             <LogoSlider />
             <AppFasilitas />
             <DaftarGudang />
+            <Siteplan />
+            <Location />
             <WarehouseSlider />
             <FAQ/>
             <ListContact />

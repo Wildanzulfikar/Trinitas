@@ -20,26 +20,36 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Kirim email pakai EmailJS
+
+    const templateParams = {
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      title: "Contact Form Submission",
+    };
+
     emailjs
       .send(
-        "YOUR_SERVICE_ID",   // ganti dengan service ID dari EmailJS
-        "YOUR_TEMPLATE_ID",  // ganti dengan template ID
-        formData,
-        "YOUR_PUBLIC_KEY"    // ganti dengan public key
+        "service_62cdnow",     
+        "template_9tcm6d4",  
+        templateParams,
+        "e2pUoFtF5hwL8s49B"  
       )
       .then(
         (res) => {
-          alert("Email berhasil dikirim!");
+          alert("✅ Email berhasil dikirim!");
           setFormData({
             firstName: "",
-            lastName: "", 
+            lastName: "",
             email: "",
             phone: "",
             message: "",
           });
         },
-        (err) => alert("Gagal mengirim email: " + err.text)
+        (err) => {
+          alert("❌ Gagal mengirim email: " + err.text);
+        }
       );
   };
 
@@ -73,6 +83,7 @@ export default function ContactSection() {
                 placeholder="Firstname"
                 value={formData.firstName}
                 onChange={handleChange}
+                required
                 className="w-1/2 px-3 py-2 rounded bg-white text-black focus:outline-none"
               />
               <input
@@ -81,6 +92,7 @@ export default function ContactSection() {
                 placeholder="LastName"
                 value={formData.lastName}
                 onChange={handleChange}
+                required
                 className="w-1/2 px-3 py-2 rounded bg-white text-black focus:outline-none"
               />
             </div>
@@ -94,6 +106,7 @@ export default function ContactSection() {
                 placeholder="Your email"
                 value={formData.email}
                 onChange={handleChange}
+                required
                 className="w-full px-3 py-2 rounded focus:outline-none"
               />
             </div>
@@ -117,6 +130,7 @@ export default function ContactSection() {
               placeholder="How can we help?"
               value={formData.message}
               onChange={handleChange}
+              required
               className="w-full px-3 py-2 rounded bg-white text-black focus:outline-none"
               rows="4"
             ></textarea>

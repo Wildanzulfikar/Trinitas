@@ -133,7 +133,7 @@ export default function DaftarGudang() {
         </p>
         <div className="border-l-4 border-black pl-3 mb-6">
           <p className="font-medium">
-            Stok Gudang Yang Masih Tersedia <b>B1, B2, L1</b>, Silahkan hubungi nomor
+            Stok Gudang Yang Masih Tersedia <b>B1, B2, L1</b>, Silahkan hubungi nomor yang tertera
           </p>
         </div>
 
