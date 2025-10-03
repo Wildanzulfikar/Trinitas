@@ -53,9 +53,9 @@ export default function WarehouseGallery() {
   }, []);
 
   return (
-    <section id="galeri" className="relative h-[640px] bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
+    <section className="relative h-[640px] bg-gradient-to-br from-white to-blue-50 py-16 px-4 md:px-20">
       {/* Title */}
-      <div className="max-w-6xl mx-auto mb-12">
+      <div id="galeri" className="max-w-6xl mx-auto mb-12">
         <div className="md:flex justify-between items-center">
           <h2 className="text-3xl font-extrabold mb-4">
             <span>Suasana</span>{" "}
