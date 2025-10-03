@@ -45,7 +45,7 @@ export default function Footer() {
             <li className="hover:text-gray-800 cursor-pointer"><a href="#home">Home</a></li>
             <li className="hover:text-gray-800 cursor-pointer"><a href="#tentangkami">Tentang kami</a></li>
             <li className="hover:text-gray-800 cursor-pointer"><a href="#fasilitas">Fasilitas</a></li>
-            <li className="hover:text-gray-800 cursor-pointer"><a href="#infogudang">Info gudang</a></li>
+            <li className="hover:text-gray-800 cursor-pointer"><a href="#gudang">Info gudang</a></li>
             <li className="hover:text-gray-800 cursor-pointer"><a href="#galeri">Galeri</a></li>
           </ul>
         </div>
