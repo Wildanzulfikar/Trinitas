@@ -17,6 +17,15 @@ export default function DaftarGudang() {
     },
     {
       id: 2,
+      name: "Gudang B1, B1-b",
+      size: "1200 m²",
+      img: "daftar-gudang/B6.jpeg",
+      fasilitas: { Kantor: false, Toilet: true, Wastafel: false },
+      catatan: "Fasilitas ini terdapat di B1-b",
+      highlight: true,
+    },
+    {
+      id: 3,
       name: "Gudang B2",
       size: "2400 m²",
       img: "daftar-gudang/B2.jpeg",
@@ -26,7 +35,7 @@ export default function DaftarGudang() {
       highlight: true,
     },
     {
-      id: 3,
+      id: 4,
       name: "Gudang B3",
       size: "2400 m²",
       img: "daftar-gudang/B3.jpeg",
@@ -36,7 +45,7 @@ export default function DaftarGudang() {
       highlight: false,
     },
     {
-      id: 4,
+      id: 5,
       name: "Gudang B4",
       size: "2400 m²",
       img: "daftar-gudang/B4.jpeg",
@@ -45,7 +54,7 @@ export default function DaftarGudang() {
       highlight: false,
     },
     {
-      id: 5,
+      id: 6,
       name: "Gudang B5",
       size: "2000 m²",
       img: "daftar-gudang/B5.jpeg",
@@ -54,7 +63,7 @@ export default function DaftarGudang() {
       highlight: false,
     },
     {
-      id: 6,
+      id: 7,
       name: "Gudang B6",
       size: "1200 m²",
       img: "daftar-gudang/B6.jpeg",
@@ -63,7 +72,7 @@ export default function DaftarGudang() {
       highlight: false,
     },
     {
-      id: 7,
+      id: 8,
       name: "Gudang B7",
       size: "1600 m²",
       img: "daftar-gudang/B7.jpeg",
@@ -72,7 +81,7 @@ export default function DaftarGudang() {
       highlight: false,
     },
     {
-      id: 8,
+      id: 9,
       name: "Gudang L1",
       size: "2508 m²",
       img: "daftar-gudang/L1.jpeg",
@@ -81,7 +90,7 @@ export default function DaftarGudang() {
       highlight: true,
     },
     {
-      id: 9,
+      id: 10,
       name: "Gudang L2",
       size: "840 m²",
       img: "daftar-gudang/L2.jpeg",
