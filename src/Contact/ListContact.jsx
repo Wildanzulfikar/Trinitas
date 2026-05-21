@@ -20,7 +20,7 @@ const ListContact = () => {
         {/* Phone */}
         <div className="flex flex-col items-center text-gray-700">
           <FaUserAlt className="text-2xl mb-2" />
-          <p>+62 8131 8130 037</p>
+          <p>+62 899 9900 311</p>
         </div>
 
         {/* Email */}
